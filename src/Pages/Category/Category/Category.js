@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 const Category = () => {
-    const [categories,setCategories]=useState([]);
+  
     return (
         <div>
-            <h4>All Category</h4>
+            <h4>This is Categaory</h4>
         </div>
     );
 };
