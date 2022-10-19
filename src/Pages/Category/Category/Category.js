@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Category = () => {
+    const [categories,setCategories]=useState([]);
     return (
         <div>
-            <h3>This is Category Pages</h3>
+            <h4>All Category</h4>
         </div>
     );
 };
