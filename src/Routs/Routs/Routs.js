@@ -8,40 +8,40 @@ import News from "../../Pages/News/News/News";
 import TermsAndCondition from "../../Pages/other/TermsAndCondition/TermsAndCondition";
 import PriveteRoute from "../PriveteRoute/PriveteRoute";
 
-export const routes=createBrowserRouter([
+export const routes = createBrowserRouter([
     {
-        path:"/",
-        element:<Main></Main>,
-        children:[
+        path: "/",
+        element: <Main></Main>,
+        children: [
             {
-              path:"/",
-              element:<Home></Home>,
-              loader:()=> fetch('http://localhost:5000/news')
+                path: "/",
+                element: <Home></Home>,
+                loader: () => fetch('https://dragon-news-server-site.vercel.app/news')
             },
             {
-                path:"/category/:id",
-                element:<Category></Category>,
-                loader:({params})=>fetch(`http://localhost:5000/category/${params.id}`)
+                path: "/category/:id",
+                element: <Category></Category>,
+                loader: ({ params }) => fetch(`https://dragon-news-server-site.vercel.app/category/${params.id}`)
             },
             {
-                path:"/news/:id",
+                path: "/news/:id",
                 element: <PriveteRoute><News></News></PriveteRoute>,
-                loader:({params})=>fetch(`http://localhost:5000/news/${params.id}`)
+                loader: ({ params }) => fetch(`https://dragon-news-server-site.vercel.app/news/${params.id}`)
             },
             {
-                path:"/logIn",
-                element:<Login></Login>
+                path: "/logIn",
+                element: <Login></Login>
             },
             {
-                path:"/signUp",
-                element:<Registration></Registration>
+                path: "/signUp",
+                element: <Registration></Registration>
             },
             {
-                path:"/terms",
-                element:<TermsAndCondition></TermsAndCondition>
+                path: "/terms",
+                element: <TermsAndCondition></TermsAndCondition>
             }
-            
-    ]
+
+        ]
 
     }
 ])
